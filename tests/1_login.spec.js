@@ -1,15 +1,10 @@
-import { test, expect } from '@playwright/test';
-import { login } from './utils/auth';
+import { test } from '@playwright/test';
+import LoginPage from '../page/loginPage';
 
-test('login to React Admin Demo and reaches dashboard', async ({ page }) => {
-  await login(page);
+const baseURL = 'https://marmelab.com/react-admin-demo/#/';
+
+test('login to React Admin Demo', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.login(baseURL, 'demo', 'demo');
 });
 
-// test('login to React Admin Demo and reaches dashboard', async ({ page }) => {
-//   await page.goto('https://marmelab.com/react-admin-demo/#/login');
-//   await page.getByRole('textbox', { name: 'Username' }).fill('demo');
-//   await page.getByRole('textbox', { name: 'Password' }).fill('demo');
-//   await page.getByRole('button', { name: 'Sign in' }).click();
-  
-//   await expect(page.locator('//p[text()="Dashboard"]')).toBeVisible();
-// });

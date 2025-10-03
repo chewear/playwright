@@ -1,0 +1,4 @@
+Logging in to https://marmelab.com/react-admin-demo/#/ with email: demo
+Filling in customer form with all fields for John Doe
+Capturing screenshot of full customer form for John Doe
+Capturing screenshot of customer table after adding John Doe

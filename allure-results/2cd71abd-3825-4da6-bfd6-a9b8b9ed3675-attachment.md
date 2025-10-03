@@ -1,0 +1,133 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - button "Skip to content" [ref=e4] [cursor=pointer]
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - button "Close menu" [ref=e8] [cursor=pointer]:
+          - img [ref=e9] [cursor=pointer]
+        - heading "Create Customer" [level=6] [ref=e11]:
+          - generic [ref=e14]: Create Customer
+        - img [ref=e15]
+        - button "English" [ref=e22] [cursor=pointer]:
+          - img [ref=e24] [cursor=pointer]
+          - text: English
+          - img [ref=e27] [cursor=pointer]
+        - button "Change Theme" [ref=e29] [cursor=pointer]:
+          - img [ref=e30] [cursor=pointer]
+        - button "Toggle light/dark mode" [ref=e32] [cursor=pointer]:
+          - img [ref=e33] [cursor=pointer]
+        - generic [ref=e35]:
+          - button "Refresh" [ref=e36] [cursor=pointer]:
+            - img [ref=e37] [cursor=pointer]
+          - progressbar [ref=e39]:
+            - img [ref=e40]
+        - button "Profile" [ref=e43] [cursor=pointer]:
+          - img "Jane Doe" [ref=e46] [cursor=pointer]
+          - text: Jane Doe
+    - main [ref=e47]:
+      - generic [ref=e51]:
+        - menuitem "Dashboard" [ref=e52] [cursor=pointer]:
+          - img [ref=e54] [cursor=pointer]
+          - paragraph [ref=e56] [cursor=pointer]: Dashboard
+        - generic [ref=e57]:
+          - menuitem "Sales" [ref=e58] [cursor=pointer]:
+            - img [ref=e60] [cursor=pointer]
+            - paragraph [ref=e62] [cursor=pointer]: Sales
+          - generic [ref=e66]:
+            - menuitem "Orders" [ref=e67] [cursor=pointer]:
+              - img [ref=e69] [cursor=pointer]
+              - paragraph [ref=e71] [cursor=pointer]: Orders
+            - menuitem "Invoices" [ref=e72] [cursor=pointer]:
+              - img [ref=e74] [cursor=pointer]
+              - paragraph [ref=e76] [cursor=pointer]: Invoices
+        - generic [ref=e77]:
+          - menuitem "Catalog" [ref=e78] [cursor=pointer]:
+            - img [ref=e80] [cursor=pointer]
+            - paragraph [ref=e82] [cursor=pointer]: Catalog
+          - generic [ref=e86]:
+            - menuitem "Posters" [ref=e87] [cursor=pointer]:
+              - img [ref=e89] [cursor=pointer]
+              - paragraph [ref=e91] [cursor=pointer]: Posters
+            - menuitem "Categories" [ref=e92] [cursor=pointer]:
+              - img [ref=e94] [cursor=pointer]
+              - paragraph [ref=e96] [cursor=pointer]: Categories
+        - generic [ref=e97]:
+          - menuitem "Customers" [ref=e98] [cursor=pointer]:
+            - img [ref=e100] [cursor=pointer]
+            - paragraph [ref=e102] [cursor=pointer]: Customers
+          - generic [ref=e106]:
+            - menuitem "Customers" [active] [ref=e107] [cursor=pointer]:
+              - img [ref=e109] [cursor=pointer]
+              - paragraph [ref=e111] [cursor=pointer]: Customers
+            - menuitem "Segments" [ref=e112] [cursor=pointer]:
+              - img [ref=e114] [cursor=pointer]
+              - paragraph [ref=e116] [cursor=pointer]: Segments
+        - menuitem "Reviews" [ref=e117] [cursor=pointer]:
+          - img [ref=e119] [cursor=pointer]
+          - paragraph [ref=e121] [cursor=pointer]: Reviews
+      - generic [ref=e126]:
+        - generic [ref=e128]:
+          - heading "Identity" [level=6] [ref=e129]
+          - generic [ref=e130]:
+            - generic [ref=e132]:
+              - generic [ref=e134]:
+                - text: First name
+                - generic [ref=e135]: "*"
+              - textbox "First name" [ref=e137]: John
+              - paragraph [ref=e138]
+            - generic [ref=e140]:
+              - generic [ref=e142]:
+                - text: Last name
+                - generic [ref=e143]: "*"
+              - textbox "Last name" [ref=e145]: Doe
+              - paragraph [ref=e146]
+          - generic [ref=e147]:
+            - generic [ref=e149]:
+              - text: Email
+              - generic [ref=e150]: "*"
+            - textbox "Email" [ref=e152]: john.doe@example.com
+            - paragraph [ref=e153]
+          - generic [ref=e154]:
+            - generic [ref=e156]: Birthday
+            - textbox "Birthday" [ref=e158]: 1990-01-01
+            - paragraph [ref=e159]
+          - heading "Address" [level=6] [ref=e160]
+          - generic [ref=e161]:
+            - generic [ref=e163]: Address
+            - textbox "Address" [ref=e165]: 123 Main Street, Suite 101
+          - generic [ref=e166]:
+            - generic [ref=e168]:
+              - generic [ref=e170]: City
+              - textbox "City" [ref=e172]: New York
+            - generic [ref=e174]:
+              - generic [ref=e176]: State
+              - textbox "State" [ref=e178]: NY
+            - generic [ref=e180]:
+              - generic [ref=e182]: Zipcode
+              - textbox "Zipcode" [ref=e184]: "10001"
+          - heading "Password" [level=6] [ref=e185]
+          - generic [ref=e186]:
+            - generic [ref=e188]:
+              - generic [ref=e190]: Password
+              - generic [ref=e191]:
+                - textbox "Password" [ref=e192]: Password123
+                - button "Show password" [ref=e194] [cursor=pointer]:
+                  - img [ref=e195] [cursor=pointer]
+              - paragraph [ref=e197]
+            - generic [ref=e199]:
+              - generic [ref=e201]: Confirm password
+              - generic [ref=e202]:
+                - textbox "Confirm password" [ref=e203]: Password123
+                - button "Show password" [ref=e205] [cursor=pointer]:
+                  - img [ref=e206] [cursor=pointer]
+              - paragraph [ref=e208]
+        - toolbar [ref=e209]:
+          - generic [ref=e210]:
+            - button "Save" [disabled]:
+              - progressbar:
+                - img
+              - text: Save
+```

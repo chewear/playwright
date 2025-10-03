@@ -1,0 +1,2 @@
+Logging in to https://marmelab.com/react-admin-demo/#/ with email: demo
+Capturing screenshot of validation errors when only first name is filled

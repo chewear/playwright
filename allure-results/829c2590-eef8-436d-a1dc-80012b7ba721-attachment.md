@@ -1,0 +1,137 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - button "Skip to content" [ref=e4] [cursor=pointer]
+    - generic [ref=e5]:
+      - banner [ref=e6]:
+        - generic [ref=e7]:
+          - button "Close menu" [ref=e8] [cursor=pointer]:
+            - img [ref=e9] [cursor=pointer]
+          - heading "Create Customer" [level=6] [ref=e11]:
+            - generic [ref=e14]: Create Customer
+          - img [ref=e15]
+          - button "English" [ref=e22] [cursor=pointer]:
+            - img [ref=e24] [cursor=pointer]
+            - text: English
+            - img [ref=e27] [cursor=pointer]
+          - button "Change Theme" [ref=e29] [cursor=pointer]:
+            - img [ref=e30] [cursor=pointer]
+          - button "Toggle light/dark mode" [ref=e32] [cursor=pointer]:
+            - img [ref=e33] [cursor=pointer]
+          - button "Refresh" [ref=e36] [cursor=pointer]:
+            - img [ref=e37] [cursor=pointer]
+          - button "Profile" [ref=e40] [cursor=pointer]:
+            - img "Jane Doe" [ref=e43] [cursor=pointer]
+            - text: Jane Doe
+      - main [ref=e44]:
+        - generic [ref=e48]:
+          - menuitem "Dashboard" [ref=e49] [cursor=pointer]:
+            - img [ref=e51] [cursor=pointer]
+            - paragraph [ref=e53] [cursor=pointer]: Dashboard
+          - generic [ref=e54]:
+            - menuitem "Sales" [ref=e55] [cursor=pointer]:
+              - img [ref=e57] [cursor=pointer]
+              - paragraph [ref=e59] [cursor=pointer]: Sales
+            - generic [ref=e63]:
+              - menuitem "Orders" [ref=e64] [cursor=pointer]:
+                - img [ref=e66] [cursor=pointer]
+                - paragraph [ref=e68] [cursor=pointer]: Orders
+              - menuitem "Invoices" [ref=e69] [cursor=pointer]:
+                - img [ref=e71] [cursor=pointer]
+                - paragraph [ref=e73] [cursor=pointer]: Invoices
+          - generic [ref=e74]:
+            - menuitem "Catalog" [ref=e75] [cursor=pointer]:
+              - img [ref=e77] [cursor=pointer]
+              - paragraph [ref=e79] [cursor=pointer]: Catalog
+            - generic [ref=e83]:
+              - menuitem "Posters" [ref=e84] [cursor=pointer]:
+                - img [ref=e86] [cursor=pointer]
+                - paragraph [ref=e88] [cursor=pointer]: Posters
+              - menuitem "Categories" [ref=e89] [cursor=pointer]:
+                - img [ref=e91] [cursor=pointer]
+                - paragraph [ref=e93] [cursor=pointer]: Categories
+          - generic [ref=e94]:
+            - menuitem "Customers" [ref=e95] [cursor=pointer]:
+              - img [ref=e97] [cursor=pointer]
+              - paragraph [ref=e99] [cursor=pointer]: Customers
+            - generic [ref=e103]:
+              - menuitem "Customers" [ref=e104] [cursor=pointer]:
+                - img [ref=e106] [cursor=pointer]
+                - paragraph [ref=e108] [cursor=pointer]: Customers
+              - menuitem "Segments" [ref=e109] [cursor=pointer]:
+                - img [ref=e111] [cursor=pointer]
+                - paragraph [ref=e113] [cursor=pointer]: Segments
+          - menuitem "Reviews" [ref=e114] [cursor=pointer]:
+            - img [ref=e116] [cursor=pointer]
+            - paragraph [ref=e118] [cursor=pointer]: Reviews
+        - generic [ref=e123]:
+          - generic [ref=e125]:
+            - heading "Identity" [level=6] [ref=e126]
+            - generic [ref=e127]:
+              - generic [ref=e129]:
+                - generic [ref=e131]:
+                  - text: First name
+                  - generic [ref=e132]: "*"
+                - textbox "First name" [ref=e134]: John
+                - paragraph [ref=e135]
+              - generic [ref=e137]:
+                - generic [ref=e139]:
+                  - text: Last name
+                  - generic [ref=e140]: "*"
+                - textbox "Last name" [ref=e142]: Doe
+                - paragraph [ref=e143]
+            - generic [ref=e144]:
+              - generic [ref=e146]:
+                - text: Email
+                - generic [ref=e147]: "*"
+              - textbox "Email" [active] [ref=e149]: john.doe@example.com
+              - paragraph [ref=e150]
+            - generic [ref=e151]:
+              - generic [ref=e153]: Birthday
+              - textbox "Birthday" [ref=e155]: 2025-10-03
+              - paragraph [ref=e156]
+            - heading "Address" [level=6] [ref=e157]
+            - generic [ref=e158]:
+              - generic:
+                - generic: Address
+              - textbox "Address" [ref=e160]
+            - generic [ref=e161]:
+              - generic [ref=e163]:
+                - generic:
+                  - generic: City
+                - textbox "City" [ref=e165]
+              - generic [ref=e167]:
+                - generic:
+                  - generic: State
+                - textbox "State" [ref=e169]
+              - generic [ref=e171]:
+                - generic:
+                  - generic: Zipcode
+                - textbox "Zipcode" [ref=e173]
+            - heading "Password" [level=6] [ref=e174]
+            - generic [ref=e175]:
+              - generic [ref=e177]:
+                - generic:
+                  - generic: Password
+                - generic [ref=e178]:
+                  - textbox "Password" [ref=e179]
+                  - button "Show password" [ref=e181] [cursor=pointer]:
+                    - img [ref=e182] [cursor=pointer]
+                - paragraph [ref=e184]
+              - generic [ref=e186]:
+                - generic:
+                  - generic: Confirm password
+                - generic [ref=e187]:
+                  - textbox "Confirm password" [ref=e188]
+                  - button "Show password" [ref=e190] [cursor=pointer]:
+                    - img [ref=e191] [cursor=pointer]
+                - paragraph [ref=e193]
+          - toolbar [ref=e194]:
+            - button "Save" [ref=e196] [cursor=pointer]:
+              - img [ref=e197] [cursor=pointer]
+              - text: Save
+  - alert [ref=e199]:
+    - generic [ref=e200]: The form is not valid. Please check for errors
+```

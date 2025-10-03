@@ -1,0 +1,3 @@
+Logging in to https://marmelab.com/react-admin-demo/#/ with email: demo
+Capturing screenshot of required fields customer form for Jane Smith
+Capturing screenshot of customer table after adding Jane Smith

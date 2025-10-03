@@ -1,77 +1,111 @@
-import { test, expect } from '@playwright/test';
-import { login } from './utils/auth';
+  import { test, expect } from '@playwright/test';
+  import LoginPage from '../page/loginPage';
+  import CustomerPage from '../page/customerPage';
+  import userData from '../test-data/testData_userData.json';
 
-const selectors = {
-  navCustomers: '(//p[text()="Customers"])[2]',
-  createButton: '//a[@aria-label="Create"]',
-  customerTable: '//table//tbody//tr',
-  form: {
-    firstName: '//input[@name="first_name"]',
-    lastName: '//input[@name="last_name"]',
-    email: '//input[@name="email"]',
-    birthday: '//input[@name="birthday"]',
-    address: '//textarea[@name="address"]',
-    city: '//input[@name="city"]',
-    state: '//input[@name="stateAbbr"]',
-    zipcode: '//input[@name="zipcode"]',
-    password: '//input[@name="password"]',
-    confirmPassword: '//input[@name="confirm_password"]',
-    submit: '//button[@type="submit"]'
-  }
-};
-
-const dummyUser = {
-  firstName: 'John',
-  lastName: 'Doe',
-  email: 'john.doe@example.com',
-  birthday: '1990-01-01',
-  address: '123 Main Street, Suite 101',
-  city: 'New York',
-  state: 'NY',
-  zipcode: '10001',
-  password: 'Password123'
-};
-
-test('add a new customer', async ({ page }) => {
-  // Login first
-  await login(page);
-  
-  // Navigate to customers and create new customer
-  await page.locator(selectors.navCustomers).click();
-  await page.locator(selectors.createButton).click();
-  
-  // Wait for form and fill it
-  const form = {
-    firstName: page.locator(selectors.form.firstName),
-    lastName: page.locator(selectors.form.lastName),
-    email: page.locator(selectors.form.email),
-    birthday: page.locator(selectors.form.birthday),
-    address: page.locator(selectors.form.address),
-    city: page.locator(selectors.form.city),
-    state: page.locator(selectors.form.state),
-    zipcode: page.locator(selectors.form.zipcode),
-    password: page.locator(selectors.form.password),
-    confirmPassword: page.locator(selectors.form.confirmPassword)
+  const selectors = {
+    navCustomers: '(//p[text()="Customers"])[2]',
+    createButton: '//a[@aria-label="Create"]',
+    customerTable: '//table//tbody//tr',
+    form: {
+      firstName: '//input[@name="first_name"]',
+      lastName: '//input[@name="last_name"]',
+      email: '//input[@name="email"]',
+      birthday: '//input[@name="birthday"]',
+      address: '//textarea[@name="address"]',
+      city: '//input[@name="city"]',
+      state: '//input[@name="stateAbbr"]',
+      zipcode: '//input[@name="zipcode"]',
+      password: '//input[@name="password"]',
+      confirmPassword: '//input[@name="confirm_password"]',
+      submit: '//button[@type="submit"]'
+    },
+    createdConfirmation: '//div[contains(text(), "Customer created")]',
+    requiredFieldError: '//p[text()="Required"]',
+    requiredFieldErrorToast: '//div[contains(text(),"The form is not valid. Please check for errors")]'
   };
 
-  // Wait for any field to be ready, then fill all fields
-  await expect(form.firstName).toBeVisible();
-  await form.firstName.fill(dummyUser.firstName);
-  await form.lastName.fill(dummyUser.lastName);
-  await form.email.fill(dummyUser.email);
-  await form.birthday.fill(dummyUser.birthday);
-  await form.address.fill(dummyUser.address);
-  await form.city.fill(dummyUser.city);
-  await form.state.fill(dummyUser.state);
-  await form.zipcode.fill(dummyUser.zipcode);
-  await form.password.fill(dummyUser.password);
-  await form.confirmPassword.fill(dummyUser.password);
+  const baseURL = 'https://marmelab.com/react-admin-demo/#/';
 
-  // Submit and verify
-  await page.locator(selectors.form.submit).click();
-  await expect(page.getByText('Customer created')).toBeVisible();
+  test.describe('Customer Creation Tests', () => {
+    let loginPage;
+    let customerPage;
 
-  // Verify customer was added to the list
-  await page.locator(selectors.navCustomers).click();
-  await expect(page.locator(`text="${dummyUser.firstName} ${dummyUser.lastName}"`)).toBeVisible();
-});
+    test.beforeEach(async ({ page }) => {
+      loginPage = new LoginPage(page);
+      customerPage = new CustomerPage(page);
+      await loginPage.login(baseURL, 'demo', 'demo');
+      await page.locator(selectors.navCustomers).click();
+      await page.locator(selectors.createButton).click();
+    });
+
+    test('should create customer with all fields', async ({ page }) => {
+      const user = userData.fullUserData;
+      
+      await test.step(`[TEST STEP] Fill in customer form with all fields for ${user.firstName} ${user.lastName}`, async () => {
+        console.log(`Filling in customer form with all fields for ${user.firstName} ${user.lastName}`);
+        await page.locator(selectors.form.firstName).fill(user.firstName);
+        await page.locator(selectors.form.lastName).fill(user.lastName);
+        await page.locator(selectors.form.email).fill(user.email);
+        await page.locator(selectors.form.birthday).fill(user.birthday);
+        await page.locator(selectors.form.address).fill(user.address);
+        await page.locator(selectors.form.city).fill(user.city);
+        await page.locator(selectors.form.state).fill(user.state);
+        await page.locator(selectors.form.zipcode).fill(user.zipcode);
+        await page.locator(selectors.form.password).fill(user.password);
+        await page.locator(selectors.form.confirmPassword).fill(user.confirmPassword);
+      });
+
+      await test.step(`[TEST STEP] Capture screenshot of full customer form`, async () => {
+        const screenshot = await page.screenshot();
+        await test.info().attach('full-customer-form', {
+          body: screenshot,
+          contentType: 'image/png'
+        });
+      });
+
+      
+      await page.locator(selectors.form.submit).click();
+      await page.locator(selectors.navCustomers).click();
+      await page.locator(selectors.navCustomers).click();
+      await customerPage.validateCustomerName(selectors, user);
+
+    });
+
+    test('should create customer with required fields only', async ({ page }) => {
+      const user = userData.requiredFieldsOnly;
+      
+      await page.locator(selectors.form.firstName).fill(user.firstName);
+      await page.locator(selectors.form.lastName).fill(user.lastName);
+      await page.locator(selectors.form.email).fill(user.email);
+
+      await test.step(`[TEST STEP] Capture screenshot of required fields customer form for ${user.firstName} ${user.lastName}`, async () => {
+        console.log(`Capturing screenshot of required fields customer form for ${user.firstName} ${user.lastName}`);
+        await test.info().attach('required-customer-form', { body: await page.screenshot(), contentType: 'image/png' });
+      });
+      
+      await page.locator(selectors.form.submit).click();
+      await page.locator(selectors.navCustomers).click();
+      await page.locator(selectors.navCustomers).click();
+
+      await customerPage.validateCustomerName(selectors, user);
+
+    });
+
+    test('should show validation errors with first name only', async ({ page }) => {
+      const user = userData.firstNameOnly;
+      
+      await page.locator(selectors.form.firstName).fill(user.firstName);
+
+      await page.locator(selectors.form.submit).click();
+
+      await test.step(`[TEST STEP] Capture screenshot of validation errors when only first name is filled`, async () => {
+        console.log(`Capturing screenshot of validation errors when only first name is filled`);
+        await test.info().attach('validation-errors', { body: await page.screenshot(), contentType: 'image/png' });
+      });
+
+      await expect(page.locator(selectors.requiredFieldError).first()).toBeVisible();
+      await expect(page.locator(selectors.requiredFieldErrorToast)).toBeVisible();
+
+    });
+  });

@@ -1,0 +1,165 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - button "Skip to content" [ref=e4] [cursor=pointer]
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - button "Close menu" [ref=e8] [cursor=pointer]:
+          - img [ref=e9] [cursor=pointer]
+        - heading "J John Doe" [level=6] [ref=e11]:
+          - generic [ref=e14]:
+            - generic [ref=e15]: J
+            - text: John Doe
+        - img [ref=e16]
+        - button "English" [ref=e23] [cursor=pointer]:
+          - img [ref=e25] [cursor=pointer]
+          - text: English
+          - img [ref=e28] [cursor=pointer]
+        - button "Change Theme" [ref=e30] [cursor=pointer]:
+          - img [ref=e31] [cursor=pointer]
+        - button "Toggle light/dark mode" [ref=e33] [cursor=pointer]:
+          - img [ref=e34] [cursor=pointer]
+        - button "Refresh" [ref=e37] [cursor=pointer]:
+          - img [ref=e38] [cursor=pointer]
+        - button "Profile" [ref=e41] [cursor=pointer]:
+          - img "Jane Doe" [ref=e44] [cursor=pointer]
+          - text: Jane Doe
+    - main [ref=e45]:
+      - generic [ref=e49]:
+        - menuitem "Dashboard" [ref=e50] [cursor=pointer]:
+          - img [ref=e52] [cursor=pointer]
+          - paragraph [ref=e54] [cursor=pointer]: Dashboard
+        - generic [ref=e55]:
+          - menuitem "Sales" [ref=e56] [cursor=pointer]:
+            - img [ref=e58] [cursor=pointer]
+            - paragraph [ref=e60] [cursor=pointer]: Sales
+          - generic [ref=e64]:
+            - menuitem "Orders" [ref=e65] [cursor=pointer]:
+              - img [ref=e67] [cursor=pointer]
+              - paragraph [ref=e69] [cursor=pointer]: Orders
+            - menuitem "Invoices" [ref=e70] [cursor=pointer]:
+              - img [ref=e72] [cursor=pointer]
+              - paragraph [ref=e74] [cursor=pointer]: Invoices
+        - generic [ref=e75]:
+          - menuitem "Catalog" [ref=e76] [cursor=pointer]:
+            - img [ref=e78] [cursor=pointer]
+            - paragraph [ref=e80] [cursor=pointer]: Catalog
+          - generic [ref=e84]:
+            - menuitem "Posters" [ref=e85] [cursor=pointer]:
+              - img [ref=e87] [cursor=pointer]
+              - paragraph [ref=e89] [cursor=pointer]: Posters
+            - menuitem "Categories" [ref=e90] [cursor=pointer]:
+              - img [ref=e92] [cursor=pointer]
+              - paragraph [ref=e94] [cursor=pointer]: Categories
+        - generic [ref=e95]:
+          - menuitem "Customers" [ref=e96] [cursor=pointer]:
+            - img [ref=e98] [cursor=pointer]
+            - paragraph [ref=e100] [cursor=pointer]: Customers
+          - generic [ref=e104]:
+            - menuitem "Customers" [active] [ref=e105] [cursor=pointer]:
+              - img [ref=e107] [cursor=pointer]
+              - paragraph [ref=e109] [cursor=pointer]: Customers
+            - menuitem "Segments" [ref=e110] [cursor=pointer]:
+              - img [ref=e112] [cursor=pointer]
+              - paragraph [ref=e114] [cursor=pointer]: Segments
+        - menuitem "Reviews" [ref=e115] [cursor=pointer]:
+          - img [ref=e117] [cursor=pointer]
+          - paragraph [ref=e119] [cursor=pointer]: Reviews
+      - generic [ref=e122]:
+        - generic [ref=e124]:
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - heading "Identity" [level=6] [ref=e130]
+              - generic [ref=e131]:
+                - generic [ref=e133]:
+                  - generic [ref=e135]:
+                    - text: First name
+                    - generic [ref=e136]: "*"
+                  - textbox "First name" [ref=e138]: John
+                  - paragraph [ref=e139]
+                - generic [ref=e141]:
+                  - generic [ref=e143]:
+                    - text: Last name
+                    - generic [ref=e144]: "*"
+                  - textbox "Last name" [ref=e146]: Doe
+                  - paragraph [ref=e147]
+              - generic [ref=e148]:
+                - generic [ref=e150]:
+                  - text: Email
+                  - generic [ref=e151]: "*"
+                - textbox "Email" [ref=e153]: john.doe@example.com
+                - paragraph [ref=e154]
+              - generic [ref=e157]:
+                - generic [ref=e159]: Birthday
+                - textbox "Birthday" [ref=e161]: 1990-01-01
+              - heading "Address" [level=6] [ref=e163]
+              - generic [ref=e164]:
+                - generic [ref=e166]: Address
+                - textbox "Address" [ref=e168]: 123 Main Street, Suite 101
+              - generic [ref=e169]:
+                - generic [ref=e171]:
+                  - generic [ref=e173]: City
+                  - textbox "City" [ref=e175]: New York
+                - generic [ref=e177]:
+                  - generic [ref=e179]: State
+                  - textbox "State" [ref=e181]: NY
+                - generic [ref=e183]:
+                  - generic [ref=e185]: Zipcode
+                  - textbox "Zipcode" [ref=e187]: "10001"
+              - heading "Change Password" [level=6] [ref=e188]
+              - generic [ref=e189]:
+                - generic [ref=e191]:
+                  - generic [ref=e193]: Password
+                  - generic [ref=e194]:
+                    - textbox "Password" [ref=e195]: Password123
+                    - button "Show password" [ref=e197] [cursor=pointer]:
+                      - img [ref=e198] [cursor=pointer]
+                  - paragraph [ref=e200]
+                - generic [ref=e202]:
+                  - generic [ref=e204]: Confirm password
+                  - generic [ref=e205]:
+                    - textbox "Confirm password" [ref=e206]: Password123
+                    - button "Show password" [ref=e208] [cursor=pointer]:
+                      - img [ref=e209] [cursor=pointer]
+                  - paragraph [ref=e211]
+            - generic [ref=e212]:
+              - heading "Stats" [level=6] [ref=e213]
+              - generic [ref=e214]:
+                - generic:
+                  - generic: Segments
+                - generic [ref=e215]:
+                  - combobox "Segments" [ref=e216] [cursor=pointer]
+                  - textbox
+                  - img
+                - paragraph [ref=e217]
+              - generic [ref=e218]:
+                - generic [ref=e220]: Has newsletter
+                - generic [ref=e221]:
+                  - combobox "Has newsletter No" [ref=e222] [cursor=pointer]: "No"
+                  - textbox: "false"
+                  - img
+                - paragraph [ref=e223]
+          - toolbar [ref=e224]:
+            - generic [ref=e225]:
+              - button "Save" [disabled]:
+                - img
+                - text: Save
+              - button "Delete" [ref=e226] [cursor=pointer]:
+                - img [ref=e228] [cursor=pointer]
+                - text: Delete
+        - generic [ref=e233]:
+          - heading "History" [level=6] [ref=e234]
+          - generic [ref=e235]:
+            - generic [ref=e236]:
+              - img [ref=e237]
+              - generic [ref=e240]:
+                - paragraph [ref=e241]: First seen
+                - generic [ref=e242]: 10/3/2025
+            - generic [ref=e244]:
+              - img [ref=e245]
+              - generic [ref=e248]:
+                - paragraph [ref=e249]: Last seen
+                - generic [ref=e250]: 10/3/2025
+```
